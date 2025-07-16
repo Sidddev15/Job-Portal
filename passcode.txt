@@ -1,0 +1,249 @@
+REGISTER
+//admin user details 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYTZhNmVlYjg3NjYxN2JiZmVlMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MjM0OTI5MCwiZXhwIjoxNzUyOTU0MDkwfQ.CATpPbWpKvntfYs5TI-H54aPpJRGkW4us1Se7Q4SrCg",
+    "user": {
+        "id": "6872ba6a6eeb876617bbfee0",
+        "name": "Admin User",
+        "email": "admin@gmail.com",
+        "phone": 9773965193,
+        "password": "$2b$10$l17qSKIEpqY6ftajvt9I1.pG.qEh26kv/JVjQWWPqJzQxTF1AHIoa", => adminpass
+        "role": "admin"
+    }
+}
+
+recruiter user details 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYjA2NmVlYjg3NjYxN2JiZmVlNiIsInJvbGUiOiJyZWNydWl0ZXIiLCJpYXQiOjE3NTIzNDk0NDYsImV4cCI6MTc1Mjk1NDI0Nn0.g3WiPGkfYrwlX-fcHxpfQyvrMXFeibB0MaCeoSqx02M",
+    "user": {
+        "id": "6872bb066eeb876617bbfee6",
+        "name": "Recruiter User",
+        "email": "recruiter@gmail.com",
+        "phone": 9773965192,
+        "password": "$2b$10$0x1vRBVgiBxieigg3X9jguYYXzWLSbPusnXsALfXEZYzSQ3p9OsGW", => recruiterpass
+        "role": "recruiter"
+    }
+}
+
+Candidate user detail 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYjNlNmVlYjg3NjYxN2JiZmVlYSIsInJvbGUiOiJjYW5kaWRhdGUiLCJpYXQiOjE3NTIzNDk1MDIsImV4cCI6MTc1Mjk1NDMwMn0.STyDGOfqSNqSmqQJtxu-NyoapioyNeuG3VcZBkE0CJk",
+    "user": {
+        "id": "6872bb3e6eeb876617bbfeea",
+        "name": "Candidate User",
+        "email": "candidate@gmail.com",
+        "phone": 9773965191,
+        "password": "$2b$10$NeJ4eorvyhf27RHQcsagX.uK4GwNpwwGDsh0sL9fQK077EvfacqNm", => candidatepass
+        "role": "candidate"
+    }
+}
+
+LOGIN
+//candidate 
+with email
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYjNlNmVlYjg3NjYxN2JiZmVlYSIsInJvbGUiOiJjYW5kaWRhdGUiLCJpYXQiOjE3NTIzNDk3MTMsImV4cCI6MTc1Mjk1NDUxM30.HnyO5PyR8lP6VM1T533xsBJoI2RyNN3PT6yybWcnu5A",
+    "user": {
+        "id": "6872bb3e6eeb876617bbfeea",
+        "name": "Candidate User",
+        "email": "candidate@gmail.com",
+        "phone": 9773965191,
+        "role": "candidate"
+    }
+}
+
+with phone number 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYjNlNmVlYjg3NjYxN2JiZmVlYSIsInJvbGUiOiJjYW5kaWRhdGUiLCJpYXQiOjE3NTIzNDk3NTUsImV4cCI6MTc1Mjk1NDU1NX0.bdp2EHIvm-cmIe2OSgdxSzvUZkkVbCxCd84EWP_tew0",
+    "user": {
+        "id": "6872bb3e6eeb876617bbfeea",
+        "name": "Candidate User",
+        "email": "candidate@gmail.com",
+        "phone": 9773965191,
+        "role": "candidate"
+    }
+}
+
+//recruiter 
+with email 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYjA2NmVlYjg3NjYxN2JiZmVlNiIsInJvbGUiOiJyZWNydWl0ZXIiLCJpYXQiOjE3NTIzNDk4MDcsImV4cCI6MTc1Mjk1NDYwN30.2MaustyG302jxScKjHdbfBdHiN5k2rNJ6duwhGL5I2k",
+    "user": {
+        "id": "6872bb066eeb876617bbfee6",
+        "name": "Recruiter User",
+        "email": "recruiter@gmail.com",
+        "phone": 9773965192,
+        "role": "recruiter"
+    }
+}
+with phone number 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYjA2NmVlYjg3NjYxN2JiZmVlNiIsInJvbGUiOiJyZWNydWl0ZXIiLCJpYXQiOjE3NTIzNDk4NTQsImV4cCI6MTc1Mjk1NDY1NH0.gmL-bTLlH4EkGc6QpYdHonbByssNaOtXQfJECU7pyrc",
+    "user": {
+        "id": "6872bb066eeb876617bbfee6",
+        "name": "Recruiter User",
+        "email": "recruiter@gmail.com",
+        "phone": 9773965192,
+        "role": "recruiter"
+    }
+}
+
+//admin
+with number 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYTZhNmVlYjg3NjYxN2JiZmVlMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MjM0OTg5NCwiZXhwIjoxNzUyOTU0Njk0fQ.BWuHj_L6cYSveuP42oQVxbS2OPfNx8lauHSyMTegOZ0",
+    "user": {
+        "id": "6872ba6a6eeb876617bbfee0",
+        "name": "Admin User",
+        "email": "admin@gmail.com",
+        "phone": 9773965193,
+        "role": "admin"
+    }
+}
+
+with email 
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NzJiYTZhNmVlYjg3NjYxN2JiZmVlMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc1MjM0OTkzMywiZXhwIjoxNzUyOTU0NzMzfQ.qCO-QR-tR5oN9TlJoe4lBEhafDRHTf_qY1VO0h1sE_o",
+    "user": {
+        "id": "6872ba6a6eeb876617bbfee0",
+        "name": "Admin User",
+        "email": "admin@gmail.com",
+        "phone": 9773965193,
+        "role": "admin"
+    }
+}
+
+POST: http://localhost:5000/api/jobs
+{
+    "title": "Frontend Developer",
+    "description": "React dev wanted!",
+    "skills": [
+        "React",
+        "JavaScript",
+        "CSS"
+    ],
+    "location": "Remote",
+    "salaryRange": "12-16 LPA",
+    "postedBy": "6872ba6a6eeb876617bbfee0",
+    "status": "open",
+    "_id": "6877df71c3a077fd2ef66e52",
+    "createdAt": "2025-07-16T17:20:49.461Z",
+    "updatedAt": "2025-07-16T17:20:49.461Z",
+    "__v": 0
+}
+
+GET /api/all/jobs
+[
+    {
+        "_id": "6877dedec3a077fd2ef66e4f",
+        "title": "Frontend Developer",
+        "description": "React dev wanted!",
+        "skills": [
+            "React",
+            "JavaScript",
+            "CSS"
+        ],
+        "location": "Remote",
+        "salaryRange": "12-16 LPA",
+        "postedBy": {
+            "_id": "6872ba6a6eeb876617bbfee0",
+            "name": "Admin User",
+            "email": "admin@gmail.com"
+        },
+        "status": "open",
+        "createdAt": "2025-07-16T17:18:22.345Z",
+        "updatedAt": "2025-07-16T17:18:22.345Z",
+        "__v": 0
+    },
+    {
+        "_id": "6877df71c3a077fd2ef66e52",
+        "title": "Frontend Developer",
+        "description": "React dev wanted!",
+        "skills": [
+            "React",
+            "JavaScript",
+            "CSS"
+        ],
+        "location": "Remote",
+        "salaryRange": "12-16 LPA",
+        "postedBy": {
+            "_id": "6872ba6a6eeb876617bbfee0",
+            "name": "Admin User",
+            "email": "admin@gmail.com"
+        },
+        "status": "open",
+        "createdAt": "2025-07-16T17:20:49.461Z",
+        "updatedAt": "2025-07-16T17:20:49.461Z",
+        "__v": 0
+    }
+]
+POST http://localhost:5000/api/applications/6872ba6a6eeb876617bbfee0/apply
+{
+    "job": "6872ba6a6eeb876617bbfee0",
+    "candidate": "6872bb3e6eeb876617bbfeea",
+    "resumeUrl": "https://yourbucket.com/resume.pdf",
+    "status": "applied",
+    "_id": "6877e3f2ec89657337f4f6fb",
+    "appliedAt": "2025-07-16T17:40:02.433Z",
+    "updatedAt": "2025-07-16T17:40:02.433Z",
+    "__v": 0
+}
+
+GET http://localhost:5000/api/applications/my
+
+[
+    {
+        "_id": "6877e3f2ec89657337f4f6fb",
+        "job": null,
+        "candidate": "6872bb3e6eeb876617bbfeea",
+        "resumeUrl": "https://yourbucket.com/resume.pdf",
+        "status": "applied",
+        "appliedAt": "2025-07-16T17:40:02.433Z",
+        "updatedAt": "2025-07-16T17:40:02.433Z",
+        "__v": 0
+    }
+]
+
+GET http://localhost:5000/api/applications/
+
+[
+    {
+        "_id": "6877e3f2ec89657337f4f6fb",
+        "job": null,
+        "candidate": {
+            "_id": "6872bb3e6eeb876617bbfeea",
+            "name": "Candidate User",
+            "email": "candidate@gmail.com"
+        },
+        "resumeUrl": "https://yourbucket.com/resume.pdf",
+        "status": "applied",
+        "appliedAt": "2025-07-16T17:40:02.433Z",
+        "updatedAt": "2025-07-16T17:40:02.433Z",
+        "__v": 0
+    }
+]
+
+PATCH http://localhost:5000/api/jobs/6877df71c3a077fd2ef66e52
+{
+    "_id": "6877df71c3a077fd2ef66e52",
+    "title": "Frontend Developer",
+    "description": "React dev wanted!",
+    "skills": [
+        "React",
+        "JavaScript",
+        "CSS"
+    ],
+    "location": "Remote",
+    "salaryRange": "12-16 LPA",
+    "postedBy": "6872ba6a6eeb876617bbfee0",
+    "status": "closed",
+    "createdAt": "2025-07-16T17:20:49.461Z",
+    "updatedAt": "2025-07-16T17:52:42.751Z",
+    "__v": 0
+}
+
+DELETE http://localhost:5000/api/jobs/6877df71c3a077fd2ef66e52
+
+{
+    "message": "Job Deleted"
+}
