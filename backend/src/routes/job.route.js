@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Job = require("../models/Job");
-const auth = require("../middlewares/autMiddleware");
-const { requireRole } = require("../middlewares/roleMiddleware");
+const auth = require("../middlewares/auth.middleware");
+const { requireRole } = require("../middlewares/role.middleware");
 
 //POST /api/jobs (Recruiters & Admins)
 router.post(

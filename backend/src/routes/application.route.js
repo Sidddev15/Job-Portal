@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const Application = require("../models/Application");
 const job = require("../models/Job");
-const auth = require("../middlewares/autMiddleware");
-const { requireRole } = require("../middlewares/roleMiddleware");
+const auth = require("../middlewares/auth.middleware");
+const { requireRole } = require("../middlewares/role.middleware");
 const Job = require("../models/Job");
 
 // Apply to all jobs (Candidate Only)
