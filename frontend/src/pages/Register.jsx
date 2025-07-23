@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../auth/authContext';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../api/axios';
 
 export default function Register() {
   const { login } = useAuth();
@@ -16,13 +16,13 @@ export default function Register() {
   const navigate = useNavigate();
 
   const handleChange = (e) =>
-    setForm({ ...form, [e.target.value]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('/api/auth/register', form);
+      const res = await axios.post('auth/register', form);
       login(res.data.user, res.data.token);
       // Redirect as per role
       if (res.data.user.role === 'admin') navigate('/admin/dashboard');
