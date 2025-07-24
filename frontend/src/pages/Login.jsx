@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../auth/authContext';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../api/axios';
 
 export default function Login() {
   const { login } = useAuth();
@@ -12,11 +12,13 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
     try {
       const payload = isPhone
         ? { phone: emailOrPhone, password }
         : { email: emailOrPhone, password };
-      const res = await axios.post('/api/auth/login', payload); //adjust the base URL
+      const res = await axios.post('auth/login', payload); //adjust the base URL
       login(res.data.user, res.data.token);
       //redirect on role
       if (res.data.user.role === 'admin') navigate('/admin/dashboard');
@@ -32,7 +34,7 @@ export default function Login() {
     <>
       <h2>Login</h2>
       <button onClick={() => setIsPhone((p) => !p)}>
-        Use {isPhone ? 'Email' : 'Phone'}
+        Use {isPhone ? 'Phone' : 'Email'}
       </button>
       <form onSubmit={handleSubmit}>
         <input
