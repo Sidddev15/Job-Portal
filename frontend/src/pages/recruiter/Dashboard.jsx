@@ -9,7 +9,9 @@ export default function RecruiterDashboard() {
 
   useEffect(() => {
     axios
-      .get('/jobs')
+      .get('/jobs', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((res) => {
         setJobs(res.jobs.filter((job) => job.postedBy._id === user.id));
       })
