@@ -1,19 +1,22 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AuthProvider } from './auth/authContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './auth/ProtectedRoutes';
-import AdminDashboard from './pages/recruiter/Dashboard';
+import AdminDashboard from './pages/admin/Dashboard';
 import RecruiterDashboard from './pages/recruiterDashboard';
 import CandidateDashboard from './pages/candidate/Dashboard';
 import JobList from './pages/JobList';
 import JobDetails from './pages/JobDetails';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
+    <>
+      <AuthProvider>
+        <Navbar />
+        {/* <BrowserRouter> */}
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -44,25 +47,10 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/recruiter/dashboard"
-            element={
-              <ProtectedRoute role="recruiter">
-                <RecruiterDashboard />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/candidate/dashboard"
-            element={
-              <ProtectedRoute role="candidate">
-                <CandidateDashboard />
-              </ProtectedRoute>
-            }
-          />
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+        {/* </BrowserRouter> */}
+      </AuthProvider>
+    </>
   );
 }
 

@@ -1,25 +1,34 @@
-import { useEffect, useState } from 'react';
-import { useAuth } from '../../auth/authContext';
+// src/pages/candidate/Dashboard.jsx
+import React, { useEffect, useState } from 'react';
 import axios from '../../api/axios';
+import { useAuth } from '../../auth/authContext';
 
 export default function CandidateDashboard() {
-  const [application, setApplication] = useState([]);
   const { token } = useAuth();
+  const [applications, setApplications] = useState([]);
 
   useEffect(() => {
     axios
-      .get('/application/my', { headers: { Authorization: `Bearer ${token}` } })
-      .then((res) => res.data)
-      .catch(() => setApplication([]));
+      .get('/applications/my', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => setApplications(res.data))
+      .catch(() => setApplications([]));
   }, [token]);
 
   return (
     <div>
-      <h2>My Application</h2>
-      {application.map((app) => (
-        <div key={app._id}>
-          <h4>{app.job?.title}</h4>
-          <p>Status: {app.status}</p>
+      <h2>Candidate Dashboard</h2>
+      <h4>My Applications:</h4>
+      {applications.length === 0 && <p>No applications yet.</p>}
+      {applications.map((app) => (
+        <div
+          key={app._id}
+          style={{ border: '1px solid #eee', margin: 10, padding: 10 }}
+        >
+          <b>Job:</b> {app.job?.title}
+          <br />
+          <b>Status:</b> {app.status}
         </div>
       ))}
     </div>

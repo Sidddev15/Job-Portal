@@ -18,7 +18,7 @@ export default function Login() {
       const payload = isPhone
         ? { phone: emailOrPhone, password }
         : { email: emailOrPhone, password };
-      const res = await axios.post('auth/login', payload); //adjust the base URL
+      const res = await axios.post('/auth/login', payload); //adjust the base URL
       login(res.data.user, res.data.token);
       //redirect on role
       if (res.data.user.role === 'admin') navigate('/admin/dashboard');
@@ -39,7 +39,7 @@ export default function Login() {
       <form onSubmit={handleSubmit}>
         <input
           type={isPhone ? 'text' : 'email'}
-          placeholder={isPhone ? 'Email' : 'Phone'}
+          placeholder={isPhone ? 'Phone' : 'Email'}
           value={emailOrPhone}
           onChange={(e) => setEmailOrPhone(e.target.value)}
         />
