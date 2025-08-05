@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../api/axios';
+import { useAuth } from '../auth/authContext';
+import ApplyButton from '../components/ApplyButton';
 
 const skillOptions = ['React', 'Node', 'MongoDB', 'Express', 'Angular', 'Vue'];
 
@@ -14,6 +16,8 @@ export default function JobList() {
     status: 'open',
   });
   const [loading, setLoading] = useState(false);
+
+  const { user, token } = useAuth();
 
   const fetchJobs = async () => {
     setLoading(true);
@@ -130,6 +134,11 @@ export default function JobList() {
             <p>
               <b>Posted By:</b> {job.postedBy?.name}
             </p>
+
+            {/* Show Apply button only if user is logged in AND is a candidate */}
+            {user && user.role === 'candidate' && (
+              <ApplyButton jobId={job._id} token={token} />
+            )}
           </div>
         ))}
       {/* Pagination */}
