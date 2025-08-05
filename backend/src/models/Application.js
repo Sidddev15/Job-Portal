@@ -15,7 +15,7 @@ const applicationSchema = new mongoose.Schema(
       default: "applied",
     },
   },
-  { timestamps: { createdAt: "appliedAt" } }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("Application", applicationSchema);
