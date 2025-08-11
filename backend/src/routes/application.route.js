@@ -68,4 +68,23 @@ router.get("/", auth, requireRole(["admin"]), async (req, res) => {
   res.json(apps);
 });
 
+// get /api/application/status/:jobId -> { applied: boolean, applicationId?: string }
+router.get(
+  "/status/:jobId",
+  auth,
+  requireRole(["candidate"]),
+  async (req, res, next) => {
+    try {
+      const { jobId } = req.params;
+      const app = await Application.findOne({
+        job: jobId,
+        candidate: req.user._id,
+      }).select("_id");
+      return res.json({ applied: !!app, applicationId: app?._id || null });
+    } catch (err) {
+      return next(err);
+    }
+  }
+);
+
 module.exports = router;

@@ -107,7 +107,7 @@ router.patch(
   "/:id",
   auth,
   requireRole(["recruiter", "admin"]),
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       const job = await Job.findById(req.params.id);
       if (!job) return res.status(404).json({ message: "Job Not Found" });
@@ -121,11 +121,44 @@ router.patch(
       Object.assign(job, req.body);
       await job.save();
       res.json(job);
+      return res.json(job);
     } catch (err) {
       res.status(400).json({ message: err.message });
+      return next(err);
     }
   }
 );
+
+// GET /api/jobs?includeApplied=true
+router.get("/", auth, async (req, res, next) => {
+  try {
+    const { includeApplied } = req.query;
+    const filter = { status: "open" };
+    const jobs = await Job.find(filter)
+      .populate("postedBy", "name email")
+      .sort({ createdAt: -1 });
+
+    if (
+      includeApplied === "true" &&
+      req.user &&
+      req.user.role === "candidate"
+    ) {
+      const apps = await Application.find({ candidate: req.user._id }).select(
+        "job"
+      );
+      const appliedSet = new Set(apps.map((a) => String(a.job)));
+      const withFlag = jobs.map((j) => ({
+        ...j.toObject(),
+        appliedByMe: appliedSet.has(String(j._id)),
+      }));
+      return res.json(withFlag);
+    }
+
+    return res.json(jobs);
+  } catch (err) {
+    return next(err);
+  }
+});
 
 //DELETE /api/jobs/:id (Only recruiter and admin)
 router.delete(
